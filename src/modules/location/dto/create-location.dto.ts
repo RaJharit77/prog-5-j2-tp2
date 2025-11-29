@@ -5,28 +5,39 @@ import {
     IsBoolean,
     IsOptional,
     Min,
+    MinLength,
+    MaxLength,
+    IsInt,
 } from 'class-validator';
 import { LocationType } from '../enums/location-type.enum';
+import { Type } from 'class-transformer';
 
 export class CreateLocationDto {
     @IsString()
+    @MinLength(2)
+    @MaxLength(255)
     name!: string;
 
-    @IsString()
     @IsOptional()
+    @IsString()
+    @MaxLength(1000)
     description?: string;
 
     @IsNumber()
     @Min(0)
+    @Type(() => Number)
     price!: number;
 
-    @IsEnum(LocationType)
+    @IsEnum(LocationType, { 
+        message: `Type must be one of: ${Object.values(LocationType).join(', ')}` 
+    })
     type!: LocationType;
 
-    @IsBoolean()
     @IsOptional()
+    @IsBoolean()
     isAvailable?: boolean;
 
-    @IsNumber()
+    @IsInt()
+    @Type(() => Number)
     renterId!: number;
 }
