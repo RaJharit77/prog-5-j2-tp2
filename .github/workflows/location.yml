@@ -1,32 +1,38 @@
 name: Location Service CI
 
 on:
-    push:
-        branches: [main, develop]
-    pull_request:
-        branches: [main]
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
 
 jobs:
-    test:
-        runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "24"
-                  cache: "pnpm"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: 'pnpm'
 
-            - name: Install dependencies
-              run: pnpm ci
+      - name: Install pnpm
+        run: npm install -g pnpm
 
-            - name: Run linter
-              run: pnpm run lint
+      - name: Install dependencies
+        run: pnpm install
 
-            - name: Run tests
-              run: pnpm test
+      - name: Run linter
+        run: pnpm run lint
 
-            - name: Build application
-              run: pnpm run build
+      - name: Run unit tests
+        run: pnpm run test:unit
+
+      - name: Run e2e tests
+        run: pnpm run test:e2e
+
+      - name: Build application
+        run: pnpm run build
