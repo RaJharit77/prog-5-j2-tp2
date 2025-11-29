@@ -1,4 +1,4 @@
-name: location linter
+name: Location CI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  lint-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,5 +28,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Run linter
+        run: pnpm lint
+
       - name: Run tests
         run: pnpm test
+
+      - name: Build project
+        run: pnpm build
