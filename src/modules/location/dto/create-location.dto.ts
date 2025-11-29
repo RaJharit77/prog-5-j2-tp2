@@ -9,7 +9,7 @@ import {
   MaxLength,
   IsInt,
 } from 'class-validator';
-import { LocationType } from '../enums/location-type.enum';
+import { LocationType } from '../enum/location-type.enum';
 import { Type } from 'class-transformer';
 
 export class CreateLocationDto {

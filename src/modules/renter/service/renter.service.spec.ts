@@ -1,11 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ConflictException } from '@nestjs/common';
 import { RenterService } from './renter.service';
-import { RenterRepository } from '../repositories/renter.repository';
+import { RenterRepository } from '../repository/renter.repository';
 import { CreateRenterDto } from '../dto/create-renter.dto';
 import { UpdateRenterDto } from '../dto/update-renter.dto';
-import { Renter } from '../entities/renter.entity';
-import { RenterType } from '../enums/renter-type.enum';
+import { Renter } from '../entity/renter.entity';
+import { RenterType } from '../enum/renter-type.enum';
 import { EntityNotFoundException } from '../../../common/exceptions/entity-not-found.exception';
 
 describe('RenterService', () => {

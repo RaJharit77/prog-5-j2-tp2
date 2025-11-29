@@ -6,8 +6,8 @@ import {
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
-import { Location } from '../../location/entities/location.entity';
-import { RenterType } from '../enums/renter-type.enum';
+import { Location } from '../../location/entity/location.entity';
+import { RenterType } from '../enum/renter-type.enum';
 
 @Entity('renters')
 export class Renter {

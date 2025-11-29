@@ -8,11 +8,11 @@ import {
   Delete,
   ParseIntPipe,
 } from '@nestjs/common';
-import { LocationService } from '../services/location.service';
+import { LocationService } from '../service/location.service';
 import { CreateLocationDto } from '../dto/create-location.dto';
 import { UpdateLocationDto } from '../dto/update-location.dto';
-import { Location } from '../entities/location.entity';
-import { LocationType } from '../enums/location-type.enum';
+import { Location } from '../entity/location.entity';
+import { LocationType } from '../enum/location-type.enum';
 
 @Controller('locations')
 export class LocationController {

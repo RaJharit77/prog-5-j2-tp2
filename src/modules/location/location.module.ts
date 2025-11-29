@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { LocationService } from './services/location.service';
-import { LocationController } from './controllers/location.controller';
-import { LocationRepository } from './repositories/location.repository';
-import { Location } from './entities/location.entity';
+import { LocationService } from './service/location.service';
+import { LocationController } from './controller/location.controller';
+import { LocationRepository } from './repository/location.repository';
+import { Location } from './entity/location.entity';
 import { RenterModule } from '../renter/renter.module';
 
 @Module({

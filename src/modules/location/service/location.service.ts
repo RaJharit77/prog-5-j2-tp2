@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { LocationRepository } from '../repositories/location.repository';
+import { LocationRepository } from '../repository/location.repository';
 import { CreateLocationDto } from '../dto/create-location.dto';
 import { UpdateLocationDto } from '../dto/update-location.dto';
-import { Location } from '../entities/location.entity';
+import { Location } from '../entity/location.entity';
 import { BaseService } from '../../../common/abstractions/base.service';
 import { EntityNotFoundException } from '../../../common/exceptions/entity-not-found.exception';
-import { LocationType } from '../enums/location-type.enum';
+import { LocationType } from '../enum/location-type.enum';
 
 @Injectable()
 export class LocationService extends BaseService<Location> {

@@ -6,7 +6,7 @@ import {
   MinLength,
   MaxLength,
 } from 'class-validator';
-import { RenterType } from '../enums/renter-type.enum';
+import { RenterType } from '../enum/renter-type.enum';
 
 export class CreateRenterDto {
   @IsString()

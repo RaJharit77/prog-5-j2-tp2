@@ -8,10 +8,10 @@ import {
   Delete,
   ParseIntPipe,
 } from '@nestjs/common';
-import { RenterService } from '../services/renter.service';
+import { RenterService } from '../service/renter.service';
 import { CreateRenterDto } from '../dto/create-renter.dto';
 import { UpdateRenterDto } from '../dto/update-renter.dto';
-import { Renter } from '../entities/renter.entity';
+import { Renter } from '../entity/renter.entity';
 
 @Controller('renters')
 export class RenterController {

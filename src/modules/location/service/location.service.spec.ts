@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { LocationService } from './location.service';
-import { LocationRepository } from '../repositories/location.repository';
+import { LocationRepository } from '../repository/location.repository';
 import { CreateLocationDto } from '../dto/create-location.dto';
 import { UpdateLocationDto } from '../dto/update-location.dto';
-import { Location } from '../entities/location.entity';
-import { LocationType } from '../enums/location-type.enum';
+import { Location } from '../entity/location.entity';
+import { LocationType } from '../enum/location-type.enum';
 import { EntityNotFoundException } from '../../../common/exceptions/entity-not-found.exception';
-import { RenterType } from '../../renter/enums/renter-type.enum';
+import { RenterType } from '../../renter/enum/renter-type.enum';
 
 describe('LocationService', () => {
   let service: LocationService;

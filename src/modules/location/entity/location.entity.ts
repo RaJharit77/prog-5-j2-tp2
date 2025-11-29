@@ -7,8 +7,8 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { Renter } from '../../renter/entities/renter.entity';
-import { LocationType } from '../enums/location-type.enum';
+import { Renter } from '../../renter/entity/renter.entity';
+import { LocationType } from '../enum/location-type.enum';
 
 @Entity('locations')
 export class Location {
