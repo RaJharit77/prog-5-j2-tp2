@@ -16,7 +16,9 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Location Renter API is running on port 3000!"', () => {
-      expect(appController.getHello()).toBe('Location Renter API is running on port 3000!');
+      expect(appController.getHello()).toBe(
+        'Location Renter API is running on port 3000!',
+      );
     });
   });
 });

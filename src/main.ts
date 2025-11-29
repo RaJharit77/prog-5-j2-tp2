@@ -9,29 +9,35 @@ async function bootstrap() {
     logger: new CustomLogger(),
   });
 
-  app.useGlobalPipes(new ValidationPipe({
-    whitelist: true,
-    transform: true,
-    forbidNonWhitelisted: true,
-    transformOptions: {
-      enableImplicitConversion: true,
-    },
-    exceptionFactory: (errors) => {
-      const messages = errors.map(error => {
-        return {
-          property: error.property,
-          constraints: error.constraints,
-        };
-      });
-      return new BadRequestException({
-        message: 'Validation failed',
-        errors: messages,
-      });
-    },
-  }));
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      transform: true,
+      forbidNonWhitelisted: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
+      exceptionFactory: (errors) => {
+        const messages = errors.map((error) => {
+          return {
+            property: error.property,
+            constraints: error.constraints,
+          };
+        });
+        return new BadRequestException({
+          message: 'Validation failed',
+          errors: messages,
+        });
+      },
+    }),
+  );
 
   app.useGlobalFilters(new HttpExceptionFilter());
 
   await app.listen(process.env.PORT || 3000);
 }
-bootstrap();
+
+bootstrap().catch((error) => {
+  console.error('Error during bootstrap:', error);
+  process.exit(1);
+});

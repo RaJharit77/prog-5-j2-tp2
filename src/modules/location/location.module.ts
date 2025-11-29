@@ -7,9 +7,9 @@ import { Location } from './entities/location.entity';
 import { RenterModule } from '../renter/renter.module';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Location]), RenterModule],
-    controllers: [LocationController],
-    providers: [LocationService, LocationRepository],
-    exports: [LocationService],
+  imports: [TypeOrmModule.forFeature([Location]), RenterModule],
+  controllers: [LocationController],
+  providers: [LocationService, LocationRepository],
+  exports: [LocationService],
 })
-export class LocationModule { }
+export class LocationModule {}

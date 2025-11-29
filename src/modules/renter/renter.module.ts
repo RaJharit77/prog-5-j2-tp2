@@ -6,9 +6,9 @@ import { RenterRepository } from './repositories/renter.repository';
 import { Renter } from './entities/renter.entity';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Renter])],
-    controllers: [RenterController],
-    providers: [RenterService, RenterRepository],
-    exports: [RenterService],
+  imports: [TypeOrmModule.forFeature([Renter])],
+  controllers: [RenterController],
+  providers: [RenterService, RenterRepository],
+  exports: [RenterService],
 })
-export class RenterModule { }
+export class RenterModule {}
