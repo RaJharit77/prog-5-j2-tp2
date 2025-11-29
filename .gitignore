@@ -85,3 +85,5 @@ app.txt
 .env.local
 .env.production
 target/
+pnpm-workspace.yaml
+sql/
